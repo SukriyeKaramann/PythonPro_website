@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey123'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+# SQLite veritabanının kullanımı tercih edilmiştir ve database.db adlı dosya olarak saklanacağını belirlenmiştir.
+
 db = SQLAlchemy(app)
 
 # Veritabanı Modeli tanımlama
