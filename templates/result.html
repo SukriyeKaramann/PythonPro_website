@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav Sonucu - PythonPro</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #004d40;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .content h2 {
+            color: #00796b;
+        }
+        .footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #00796b;
+        }
+        a {
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover {
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sınav Sonucu</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>Sonuçlarınız</h2>
+            <p>Puanınız: {{ score }}</p>
+            <p>En yüksek puan: {{ highest_score or 0 }}</p>
+            <a href="{{ url_for('index') }}">Geri Dön</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Geliştirici: Şükriye KARAMAN</p>
+    </footer>
+</body>
+</html>

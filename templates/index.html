@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınav - PythonPro</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #004d40;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #00796b;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .form-group button {
+            padding: 12px 25px;
+            background: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background: #004d40;
+        }
+        .highest-score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffeb3b;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            font-weight: bold;
+            color: #004d40;
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PythonPro - Sınav Uygulaması</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="highest-score">
+                En yüksek puan: {{ highest_score or 0 }}
+            </div>
+            <h2>Sınavı Tamamla</h2>
+            <form action="{{ url_for('submit') }}" method="POST">
+                <div class="form-group">
+                    <label for="question1">1. Bilgisayar görüşü hangi tür verilerle çalışır?</label>
+                    <input type="text" id="question1" name="questions[1]" required>
+                </div>
+                <div class="form-group">
+                    <label for="question2">2. Bilgisayar görüşü alanında yaygın olarak kullanılan bir kütüphane nedir?</label>
+                    <select id="question2" name="questions[2]" required>
+                        <option value="" disabled selected>Seçiniz</option>
+                        <option value="OpenCV">OpenCV</option>
+                        <option value="TensorFlow">TensorFlow</option>
+                        <option value="NumPy">NumPy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question3">3. Bilgisayar görüşü genellikle hangi yapay zeka tekniğini kullanır?</label>
+                    <input type="text" id="question3" name="questions[3]" required>
+                </div>
+                <div class="form-group">
+                    <label for="question4">4. Bilgisayar görüşü uygulamalarında hangi tür algoritmalar sıklıkla kullanılır?</label>
+                    <input type="text" id="question4" name="questions[4]" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Gönder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Geliştirici: Şükriye KARAMAN</p>
+    </footer>
+</body>
+</html>
